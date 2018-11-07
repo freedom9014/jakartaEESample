@@ -19,6 +19,7 @@ public class UranaiServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
+	//20181107に書き換えました
     public UranaiServlet() {
         super();
         // TODO Auto-generated constructor stub
