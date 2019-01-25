@@ -18,6 +18,15 @@ import javax.servlet.http.HttpServletResponse;
 public class UranaiServlet extends HttpServlet {
 
 
+<<<<<<< HEAD
+=======
+	//20181107に書き換えました
+    public UranaiServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+>>>>>>> branch 'master' of https://github.com/freedom9014/jakartaEESample
   //星座の名前リスト
   	public static String[] sta={
   	"おひつじ座","おうし座","ふたご座","かに座",
