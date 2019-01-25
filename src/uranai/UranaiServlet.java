@@ -16,13 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/uranai/UranaiServlet")
 public class UranaiServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
-
-    public UranaiServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
   //星座の名前リスト
   	public static String[] sta={
