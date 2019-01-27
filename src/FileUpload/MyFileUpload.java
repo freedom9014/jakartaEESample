@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+//いつもはつかってない「nio」パッケージ使っているので忘れずに
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -11,6 +12,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
+//importはannotation忘れずに
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -19,9 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-/**
- * Servlet implementation class MyFileUpload
- */
+//アノテーション記述
 @WebServlet(name="MyFileUpload", urlPatterns={"/MyFileUpload"})
 @MultipartConfig(fileSizeThreshold=5000000,maxFileSize=10000000,location="C:\\GoToImage")
 
@@ -47,6 +47,7 @@ public class MyFileUpload extends HttpServlet {
 			        InputStream in = part.getInputStream();
 			        Files.copy(in, filePath, StandardCopyOption.REPLACE_EXISTING);
 			        // 画面遷移先で保存したファイルパスを表示
+			        //テスト用なのでサーブレットで表示
 			        response.setContentType("text/html;charset=UTF-8");
 			        try (PrintWriter out = response.getWriter()) {
 			            out.println("<!DOCTYPE html>");
@@ -62,14 +63,6 @@ public class MyFileUpload extends HttpServlet {
 			            out.println("</body>");
 			            out.println("</html>");
 			        }
-
-			        /*PrintWriter out = response.getWriter();
-			        out.println("<HTML><BODY>");
-			        out.println("File : " + name + " is update successful");
-			        out.println("</BODY></HTML>");
-			        out.flush();
-			        out.close();
-			        */
 			    }
 
 			    @Override
@@ -93,14 +86,15 @@ public class MyFileUpload extends HttpServlet {
 			        String[] split = header.split(";");
 			        // headerは、以下の内容になっているので、ここからfilenameである「fileupload.png」を取得
 			        // form-data; name="file"; filename="fileupload.png"
-			        String fileName =
+			        String fullPathName =
 			                Arrays.asList(split).stream()
 			                        .filter(s -> s.trim().startsWith("filename"))
 			                        .collect(Collectors.joining());
-			       String last = fileName.substring(fileName.indexOf("=") + 1).replace("\"", "");
+			       String last = fullPathName.substring(fullPathName.indexOf("=") + 1).replace("\"", "");
 			       System.out.println(last);
-			       String last2 = last.substring(last.lastIndexOf("\\") + 1);
-			        return last2;
+			       //フルパスから、最後のファイル名だけとってくる処理
+			       String fileName = last.substring(last.lastIndexOf("\\") + 1);
+			        return fileName;
 			    }
 
 
