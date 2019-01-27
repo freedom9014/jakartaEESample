@@ -98,16 +98,4 @@ public class MyFileUpload extends HttpServlet {
 			    }
 
 
-
-
-	/**
-     * @see HttpServlet#HttpServlet()
-     */
-    public MyFileUpload() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-
-
 }
