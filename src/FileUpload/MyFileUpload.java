@@ -70,7 +70,7 @@ public class MyFileUpload extends HttpServlet {
 			    throws IOException, ServletException{
 			        processRequest(request,response);
 			    }
-
+/*
 			    private String getFilename(Part part) {
 			        for (String cd : part.getHeader("Content-Disposition").split(":")) {
 			            if (cd.trim().startsWith("filename")) {
@@ -79,7 +79,7 @@ public class MyFileUpload extends HttpServlet {
 			        }
 			        return null;
 			    }
-
+*/
 			    private String getFileName(Part part) {
 			        String header = part.getHeader("content-disposition");
 			        System.out.println("***" + header);

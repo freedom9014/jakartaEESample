@@ -22,7 +22,7 @@ public class UranaiServlet extends HttpServlet {
 	//20181107に書き換えました
     public UranaiServlet() {
         super();
-        // TODO Auto-generated constructor stub
+
     }
 
 
@@ -99,7 +99,7 @@ public class UranaiServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
