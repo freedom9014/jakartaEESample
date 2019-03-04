@@ -1,1 +1,13 @@
 @CHARSET "UTF-8";
+
+table {
+	background-color:lightblue;	/*背景色をlightblueに*/
+	margin: 5;					/*マージンを５に（要確認）*/
+	padding: 5;					/*paddingを5に（要確認）*/
+	width: 500px;				/*テーブルの幅を500ピクセルに*/
+	height: 250px;				/*テーブルの高さを250ピクセルに*/
+	margin-left:auto;			/*下の行と合わせて、*/
+	margin-right:auto;			/*左右のマージンをAutoにして結果センターに。*/
+  }
+
+
