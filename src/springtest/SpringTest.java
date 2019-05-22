@@ -10,6 +10,9 @@ public class SpringTest {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("springtest\\applicationContext-test.xml");
 
+		//getBean()メソッドでCalculatorインターフェイスの実装クラスのインスタンスを取得。
+		//このとき、生成されたインスタンスのAccessor型のフィールドには既に
+		//インスタンスがセットされている。
 		Calculator calc=(Calculator) context.getBean("calc");
 
 		int ret = calc.plusStrings("10","20");
