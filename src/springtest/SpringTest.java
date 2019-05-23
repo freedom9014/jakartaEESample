@@ -8,6 +8,7 @@ public class SpringTest {
 
 	public static void main(String[] args) {
 
+		@SuppressWarnings("resource")
 		ApplicationContext context = new ClassPathXmlApplicationContext("springtest\\applicationContext-test.xml");
 
 		//getBean()メソッドでCalculatorインターフェイスの実装クラスのインスタンスを取得。
