@@ -18,6 +18,7 @@ public class SpringTest {
 		int ret = calc.plusStrings("10","20");
 
 		System.out.println(ret);
+		context = null;
 
 		// TODO 自動生成されたメソッド・スタブ
 
